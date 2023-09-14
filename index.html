@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Spot</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        #h1 {
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- This is for header section -->
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand " href="#">
+                <h3 style="font-family:monospace">Weather Spot</h3>
+            </a>
+
+
+
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" style="color: red;" placeholder="Search" id="city" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit" id="submit" id="submit">Search</button>
+            </form>
+        </div>
+        </div>
+    </nav>
+
+
+
+    </header>
+
+    <!-- This for weather showing card item  -->
+
+    <div class="container">
+
+
+
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="my-4 text-center" style="font-family:'Courier New', Courier, monospace;color: wheat;">Weather for
+                <span id="cityName"
+                    style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color: blueviolet;">
+                </span>
+            </h1>
+
+        </div>
+        <!--this is for card1 -->
+
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-smtext-bg-danger border-danger">
+                    <div class="card-header py-3 text-bg-danger border-danger">
+                        <h4 class="my-0 fw-normal">TEMPERATURE</h4>
+                    </div>
+                    <div class="card-body">
+
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li id="sptemp" style="color:black; font-size:35px;font-weight: bolder;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"></li>
+                            <li style="font-size: larger; color: blue; font-weight: bolder;">TEMPERATURE:-<span
+                                    style="color: red;font-size: larger;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"
+                                    id="temp"></span></li>
+                            <li style="font-size: larger; color: blue; font-weight: bolder;">MAX-TEMPERATURE:-<span
+                                    style="color: red;font-size: larger;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"
+                                    id="max_temp"></span></li>
+                            <li style="font-size: larger; color: blue; font-weight: bolder;">MIN-TEMPERATURE:-<span
+                                    style="color: red;font-size: larger;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"
+                                    id="min_temp"></span></li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <!--This is for card 2  -->
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3 text-bg-secondary border-secondary">
+                        <h4 class="my-0 fw-normal">HUMIDITY</h4>
+                    </div>
+                    <div class="card-body">
+
+                        <ul class="list-unstyled mt-3 mb-4">
+
+                            <li id="sphumo" style="color:black; font-size:35px;font-weight: bolder;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"></li>
+                            <li style="font-size: larger; color: blue;font-weight: bolder;">HUMIDITY:-<span
+                                    style="color: red;font-size: larger;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"
+                                    id="humidity"></span></li>
+                            <li style="font-size: larger; color: blue;font-weight: bolder;">SUNRISE:-<span
+                                    style="color: red;font-size: larger;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"
+                                    id="sunrise"></span></li>
+                            <li style="font-size: larger; color: blue;font-weight: bolder;">SUNSET:-<span
+                                    style="color: red;font-size: larger;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"
+                                    id="sunset"></span></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <!-- This is for card3 -->
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                    <div class="card-header py-3 text-bg-primary border-primary">
+                        <h4 class="my-0 fw-normal">WINDSPEED</h4>
+                    </div>
+                    <div class="card-body">
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li id="spwind"
+                                style="color:black; font-size:35px;font-weight: bolder;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                            </li>
+                            <li style="font-size: larger; color: blue;font-weight: bolder;">WIND-DEGREES:-<span
+                                    style="color: red;font-size: larger;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"
+                                    id="wind_degrees"></span></li>
+                            <li style="font-size: larger; color: blue;font-weight: bolder;">FEELS_LIKE:-<span
+                                    style="color: red;font-size: larger;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"
+                                    id="feels_like"></span></li>
+                            <li style="font-size: larger; color: blue;font-weight: bolder;">WIND-SPEED:-<span
+                                    style="color: red;font-size: larger;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"
+                                    id="wind_speed"></span></li>
+
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- This is for footer section -->
+        <footer>
+            <h6 class="display-6 text-center mb-4"
+                style="color: rgb(221, 15, 15);font-family:Verdana, Geneva, Tahoma, sans-serif">Other Cities</h6>
+
+            <div class="table-responsive">
+                <table class="table text-center">
+                    <thead>
+                        <tr">
+                            <th style="width: 15%;"></th>
+                            <th style="width: 15%;color: green; font-weight: bolder;font-size: larger;">CLOUDCOVER</th>
+                            <th style="width: 15%;color:red; font-weight: bolder;font-size: larger;">MAX-TEMP</th>
+                            <th style="width: 15%;color:rgb(212, 81, 107); font-weight: bolder;font-size: larger;">
+                                MIN-TEMP
+                            <th>
+                            <th style="width: 15%;color:rgb(243, 243, 8); font-weight: bolder;font-size: larger;">
+                                SUNRISE
+                            </th>
+                            <th style="width: 15%;color:rgb(4, 4, 27); font-weight: bolder;font-size: larger;">SUNSET
+                            </th>
+                            <th style="width: 15%;color:rgb(221, 81, 81); font-weight: bolder;font-size: larger;">
+                                HUMIDITY
+                            </th>
+                            </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="text-start" id="city1" style="font-size: larger; font-weight: bold;">
+                                Delhi</th>
+                            <td id="cloud_pct1" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+                            <td id="max_temp1" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+                            <td id="min_temp1" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+
+                            <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+
+                            <td id="sunrise1" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+                            <td id="sunset1" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+                            <td id="humidity1" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+                        </tr>
+
+
+                        <tr>
+                            <th scope="row" class="text-start" style="font-size: larger; font-weight: bold;">Mumbai</th>
+                            <td id="cloud_pct2" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+                            <td id="max_temp2" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+                            <td id="min_temp2" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+
+                            <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+
+                            <td id="sunrise2" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+                            <td id="sunset2" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+                            <td id="humidity2" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+
+                        </tr>
+                    </tbody>
+
+
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="text-start" style="font-size: larger; font-weight: bold;">Kolkata
+                            </th>
+                            <td id="cloud_pct3" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+                            <td id="max_temp3" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+                            <td id="min_temp3" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+
+                            <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+
+                            <td id="sunrise3" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+                            <td id="sunset3" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+                            <td id="humidity3" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row" class="text-start" style="font-size: larger; font-weight: bold;">Channai
+                            </th>
+                            <td id="cloud_pct4" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+                            <td id="max_temp4" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+                            <td id="min_temp4" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+
+                            <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+
+                            <td id="sunrise4" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+                            <td id="sunset4" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+                            <td id="humidity4" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row" class="text-start" style="font-size: larger; font-weight: bold;">Darjeeling
+                            </th>
+                            <td id="cloud_pct5" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+                            <td id="max_temp5" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+                            <td id="min_temp5" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+
+                            <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+
+                            <td id="sunrise5" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+                            <td id="sunset5" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+                            <td id="humidity5" style="font-weight: bolder;"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                </svg></td>
+                        </tr>
+
+
+
+                    </tbody>
+                </table>
+
+            </div>
+
+    </div>
+
+    </div>
+    </footer>
+    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
+</body>
+
+
+</html>
